@@ -1,0 +1,41 @@
+{
+  "name": "react-native-draggable-sheet",
+  "version": "1.0.0",
+  "description": "Interactive and performant draggable bottom sheet",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ceriumin/react-native-draggable-sheet.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-component",
+    "react",
+    "react",
+    "native",
+    "mobile",
+    "ios",
+    "android",
+    "ui",
+    "bottom-sheet",
+    "bottom",
+    "sheet",
+    "interactive"
+  ],
+  "author": "Gracjan Baryla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ceriumin/react-native-draggable-sheet/issues"
+  },
+  "homepage": "https://github.com/Ceriumin/react-native-draggable-sheet#readme",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.77.0",
+    "react-native-gesture-handler": "^2.19.0"
+  },
+  "dependencies": {
+    "react-native-reanimated": "~3.3.0"
+  }
+}
