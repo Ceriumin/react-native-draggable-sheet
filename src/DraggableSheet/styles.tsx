@@ -1,12 +1,10 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const {height: screenHeight} = Dimensions.get('window')
-
-const styles = StyleSheet.create({
+const createStyles = (screenHeight: any) => StyleSheet.create({
     overlay: {
         position: 'absolute',
         width: '100%',
-        height: Dimensions.get('window').height,
+        height: screenHeight,
         backgroundColor: 'rgba(0,0,0,0.5)',
         zIndex: 1
     },
@@ -32,4 +30,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default styles;
+export default createStyles;

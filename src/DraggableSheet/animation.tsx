@@ -1,21 +1,11 @@
-import { Dimensions, View } from 'react-native'
-import React from 'react'
-import { Gesture, GestureDetector } from 'react-native-gesture-handler'
-import Animated, { useAnimatedStyle, useSharedValue, withSpring, interpolate } from 'react-native-reanimated'
-import styles from './styles'
+import { useSharedValue, useAnimatedStyle, withSpring, interpolate } from 'react-native-reanimated'
 
-const {height: screenHeight} = Dimensions.get('window')
-const translateMaxY = screenHeight / 1.75
+export const useSheetAnimation = (screenHeight: any, Gesture: any) => {
 
-const snapPoints = [ -translateMaxY, 200]
+    const translateMaxY = screenHeight / 1.75
 
-interface SheetProps {
-    children: React.ReactNode
-}
+    const snapPoints = [ -translateMaxY, 200]
 
-const DraggableSheet: React.FC<SheetProps> = ({
-    children,
-}) => {
     const translateY = useSharedValue(0)
     const context = useSharedValue({y: 0})
 
@@ -24,7 +14,7 @@ const DraggableSheet: React.FC<SheetProps> = ({
     .onStart(() => {
         context.value = { y: translateY.value }
     })
-    .onUpdate((e) => {
+    .onUpdate((e: any) => {
         translateY.value = e.translationY + context.value.y
         translateY.value = Math.max(translateY.value, -translateMaxY)
     })
@@ -56,20 +46,6 @@ const DraggableSheet: React.FC<SheetProps> = ({
             opacity,
         };
     });
-          
-  return (
-    <>
-        <GestureDetector gesture={gesture}>
-            <View>
-                <Animated.View style={[styles.overlay, animatedOverlayStyle]} />
-                <Animated.View style={[styles.bottomsheet_container, reanimatedBottomStyle]}>
-                    <View style={styles.line} />
-                    {children}
-                </Animated.View>
-            </View>
-        </GestureDetector>
-    </>
-  )
-}
 
-export default DraggableSheet
+    return {gesture, reanimatedBottomStyle, animatedOverlayStyle}
+}   
