@@ -1,6 +1,6 @@
 {
   "name": "react-native-draggable-sheet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interactive and performant draggable bottom sheet",
   "main": "index.tsx",
   "scripts": {
